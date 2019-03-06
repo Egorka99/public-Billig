@@ -1,0 +1,28 @@
+F:\Billig\Number_Long++\Number_Long++\bin\Debug\Number_Long++.exe.config
+F:\Billig\Number_Long++\Number_Long++\bin\Debug\Number_Long++.exe
+F:\Billig\Number_Long++\Number_Long++\bin\Debug\Number_Long++.pdb
+F:\Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.csprojResolveAssemblyReference.cache
+F:\Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.exe
+F:\Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.pdb
+D:\Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.csprojAssemblyReference.cache
+D:\Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.csproj.CoreCompileInputs.cache
+D:\Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.exe
+D:\Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.pdb
+D:\Billig\Number_Long++\Number_Long++\bin\Debug\Number_Long++.exe.config
+D:\Billig\Number_Long++\Number_Long++\bin\Debug\Number_Long++.exe
+D:\Billig\Number_Long++\Number_Long++\bin\Debug\Number_Long++.pdb
+F:\Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.csproj.CoreCompileInputs.cache
+D:\MVS Project\repos\private-billig\Number_Long++\Number_Long++\bin\Debug\Number_Long++.exe.config
+D:\MVS Project\repos\private-billig\Number_Long++\Number_Long++\bin\Debug\Number_Long++.exe
+D:\MVS Project\repos\private-billig\Number_Long++\Number_Long++\bin\Debug\Number_Long++.pdb
+D:\MVS Project\repos\private-billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.csprojAssemblyReference.cache
+D:\MVS Project\repos\private-billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.csproj.CoreCompileInputs.cache
+D:\MVS Project\repos\private-billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.exe
+D:\MVS Project\repos\private-billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.pdb
+C:\GitHub\private-billig\Number_Long++\Number_Long++\bin\Debug\Number_Long++.exe.config
+C:\GitHub\private-billig\Number_Long++\Number_Long++\bin\Debug\Number_Long++.exe
+C:\GitHub\private-billig\Number_Long++\Number_Long++\bin\Debug\Number_Long++.pdb
+C:\GitHub\private-billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.csprojResolveAssemblyReference.cache
+C:\GitHub\private-billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.csproj.CoreCompileInputs.cache
+C:\GitHub\private-billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.exe
+C:\GitHub\private-billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.pdb
