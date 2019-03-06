@@ -10,13 +10,13 @@ namespace Number_Long__
     /// Реализация чисел, больше long
     /// </summary>
     public class BigNumber
-    {                                             
+    {                                              
         /// <summary> 
         /// Массив цифр
-        /// </summary> 
-        public List<int> digits;
-
-        /// <summary>
+        /// </summary>  
+        public int[] digits;
+         
+        /// <summary> 
         /// Знак числа True - плюс False - минус  
         /// </summary>
         public bool sign;
@@ -30,36 +30,38 @@ namespace Number_Long__
         {
             sign = true;
 
-            if (value[0] == '-') 
+            if (value[0] == '-')  
             {
                 throw new Exception("Нельзя вводить отрицательные числа");
+            } 
+
+            digits = new int[value.Length]; 
+             
+            if (digits.Length - 1 == '0')
+            {
+                throw new Exception("Число не может начинаться с нуля");
             }
 
-            //if (value[0] == '0') Эта хрень валит тесты((0((9((1
-            //{
-            //    throw new Exception("Число не может начинаться с нуля");
-            //} 
-             
             for (int i = value.Length - 1; i >= 0; i--) //из строки с конца ебашим в байт массив 
             {
                 char c = value[value.Length - i - 1]; 
-                digits.Insert( i, int.Parse(c.ToString()) );
+                digits[i] = int.Parse(c.ToString()) ;
             }
-               
-            Length = digits.Count;  
+                
+            Length = digits.Length;  
         }
-
+         
         /// <summary>
         /// Альтернативный конструктор, сразу с массивом, минуя предыдущий этап 
         /// </summary>
         /// <param name="digits">Байтовый массив</param>
-        private BigNumber(List<int> digits) 
+        private BigNumber(int[] digits) 
         {
-            sign = true;
+            sign = true;  
+              
+            this.digits = digits; 
              
-            this.digits = digits;
-
-            Length = digits.Count; 
+            Length = digits.Length; 
         } 
 
         public static bool operator >(BigNumber a1, BigNumber a2)
@@ -110,20 +112,20 @@ namespace Number_Long__
             }
             return false;
         }
-         
+
         public static BigNumber operator +(BigNumber a1, BigNumber a2)
         {
-            int resLength = Math.Max(a1.Length, a2.Length); // длина результата 
-            List<int> res = new List<int>();  // Временный список для результата сложения 
+            int tempArrLength = Math.Max(a1.digits.Length, a2.digits.Length); // "Временная длина массива" - выбираем длину наиб числа 
+            int[] tempArr = new int[tempArrLength]; // Временный массив временной длины, для результата сложения 
 
             int overflow = 0; // если при сложении максимальный разряд увеличится 
 
-            for (int i = 0; i < resLength; i++)  
-            {  
-                int result = overflow;  
+            for (int i = 0; i < tempArr.Length; i++)
+            {
+                int result = overflow;
 
-                if (a1.digits.Count > i) result += a1.digits[i]; //записываем одну цифру в резалт
-                if (a2.digits.Count > i) result += a2.digits[i]; //прибавляем к ней 2ую
+                if (a1.digits.Length > i) result += a1.digits[i]; //записываем одну цифру в резалт
+                if (a2.digits.Length > i) result += a2.digits[i]; //прибавляем к ней 2ую
                 if (result > 9) // если больше двух цифр . Например 14
                 {
                     // оставляем меньший разряд. Пример: 4 = 14 - 10
@@ -131,17 +133,21 @@ namespace Number_Long__
                     overflow = 1;
                 }
                 else // иначе result = result
-                { 
-                    overflow = 0; 
+                {
+                    overflow = 0;
                 }
-                res.Add(result); // записываем результат в массив 
+                tempArr[i] = result; // записываем результат в массив
+            }
+            if (overflow > 0) // если больше двух цифр, увеличиваем массив , добавляя единицу в больший разряд Пример: 14 - 1 в десятки 
+            {
+                Array.Resize(ref tempArr, tempArr.Length + 1);
+                tempArr[tempArr.Length - 1] = 1;
             }
 
-
-            return new BigNumber(res);
+            return new BigNumber(tempArr);
         } 
 
-         
+
         public static BigNumber operator -(BigNumber a1, BigNumber a2)
         {
             int tempArrLength = Math.Max(a1.digits.Length, a2.digits.Length); // "Временная длина массива" - выбираем длину наиб числа 
@@ -207,8 +213,6 @@ namespace Number_Long__
             return result.ToArray();  
         }
 
- 
-
 
         public static BigNumber operator *(BigNumber a1, BigNumber a2)
         {
@@ -257,47 +261,10 @@ namespace Number_Long__
 
             }
             return finalresult;
-
+             
         }
-        //public static BigNumber operator *(BigNumber a1, BigNumber a2) {
 
-        //    BigNumber Result = new BigNumber("0"); 
-        //    string Buffer = ""; 
 
-        //    string A = a1.ToString();
-        //    string B = a2.ToString();
-
-        //    int lA = A.Length; 
-        //    int lB = B.Length;   
-
-        //    int bR = 0,
-        //        b = 0; //перенос 
-
-        //    for (int j = lB - 1; j >= 0; j--) //проход с конца второго числа
-        //    {
-        //        for (int i = lA - 1; i >= 0; i--) //проход с конца первого числа 
-        //        {
-        //            bR = int.Parse(Convert.ToString(A[i])) * int.Parse(Convert.ToString(B[j])); //считаем 
-        //            Buffer = Buffer.Insert(0, Convert.ToString((bR + b) % 10)); //вставляем цифру в начало буфера
-        //            b = (bR + b) / 10; // вычисляем перенос
-        //        }
-        //        if (b >= 1) Buffer = Buffer.Insert(0, Convert.ToString(b));
-
-        //        Buffer = LeftShiftDigits(Buffer, lB - 1 - j); //сдвигаем цифры, как в столбике , добавляя нули
-        //        Result = Result + new BigNumber(Buffer); 
-        //        Buffer = ""; b = 0; // очищаем все 
-        //        // пример: 123*321 = 123 + 2460 + 36900
-        //    }
-        //    return Result;   
-        //} 
-
-        // Сдвиг строки влево
-        //private static string LeftShiftDigits(string Number, int c)
-        //{
-        //    for (int i = 0; i < c; i++)
-        //        Number += 0; 
-        //    return Number; 
-        //}
 
         public static BigNumber operator /(BigNumber A, int B)
         {
@@ -322,29 +289,6 @@ namespace Number_Long__
           
         }   
 
-        ///// <summary>
-        ///// Копирование первых n цифр числа  
-        ///// </summary>
-        ///// <param name="copyitem">Число для копирования</param> 
-        ///// <param name="count">Количество цифр</param> 
-        ///// <returns></returns>
-        //public BigNumber Copy(int n)
-        //{
-        //    List<int> res = new List<int>(); // лист для результата 
-
-        //    // копируем в лист с массива в обратном порядке 
-        //    for (int i = this.Length - n; i <= this.Length - 1;  i++)  
-        //    {
-        //        res.Add(this.digits[i]); 
-        //    }
-                        
-        //    return new BigNumber( res.ToArray() );  
-        //} 
-            
-        /// <summary>
-        /// Данные из байт - массива в виде строки 
-        /// </summary>
-        /// <returns></returns> 
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder(digits.Length);

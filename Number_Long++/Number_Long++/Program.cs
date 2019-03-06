@@ -12,9 +12,10 @@ namespace Number_Long__
         {  
              
             BigNumber a1 = new BigNumber("2000");
-            int a2 = 4; 
+            BigNumber a2 = new BigNumber("20");
+            int a3 = 4;  
                              
-            Console.WriteLine( a1 / a2); 
+            Console.WriteLine( a1 + a2);  
 
             Console.ReadKey();   
               

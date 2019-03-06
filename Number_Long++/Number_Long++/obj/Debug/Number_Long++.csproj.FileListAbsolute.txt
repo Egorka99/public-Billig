@@ -26,3 +26,10 @@ C:\GitHub\private-billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.csp
 C:\GitHub\private-billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.csproj.CoreCompileInputs.cache
 C:\GitHub\private-billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.exe
 C:\GitHub\private-billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.pdb
+D:\MVS Project\repos\public-Billig\Number_Long++\Number_Long++\bin\Debug\Number_Long++.exe.config
+D:\MVS Project\repos\public-Billig\Number_Long++\Number_Long++\bin\Debug\Number_Long++.exe
+D:\MVS Project\repos\public-Billig\Number_Long++\Number_Long++\bin\Debug\Number_Long++.pdb
+D:\MVS Project\repos\public-Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.csprojAssemblyReference.cache
+D:\MVS Project\repos\public-Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.csproj.CoreCompileInputs.cache
+D:\MVS Project\repos\public-Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.exe
+D:\MVS Project\repos\public-Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.pdb
