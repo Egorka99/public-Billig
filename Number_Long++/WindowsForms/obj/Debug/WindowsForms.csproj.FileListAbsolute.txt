@@ -1,0 +1,14 @@
+C:\GitHub\public-Billig\Number_Long++\WindowsForms\bin\Debug\WindowsForms.exe.config
+C:\GitHub\public-Billig\Number_Long++\WindowsForms\bin\Debug\WindowsForms.exe
+C:\GitHub\public-Billig\Number_Long++\WindowsForms\bin\Debug\WindowsForms.pdb
+C:\GitHub\public-Billig\Number_Long++\WindowsForms\bin\Debug\Number_Long++.exe
+C:\GitHub\public-Billig\Number_Long++\WindowsForms\bin\Debug\Number_Long++.pdb
+C:\GitHub\public-Billig\Number_Long++\WindowsForms\bin\Debug\Number_Long++.exe.config
+C:\GitHub\public-Billig\Number_Long++\WindowsForms\obj\Debug\WindowsForms.csprojResolveAssemblyReference.cache
+C:\GitHub\public-Billig\Number_Long++\WindowsForms\obj\Debug\WindowsForms.Form1.resources
+C:\GitHub\public-Billig\Number_Long++\WindowsForms\obj\Debug\WindowsForms.Properties.Resources.resources
+C:\GitHub\public-Billig\Number_Long++\WindowsForms\obj\Debug\WindowsForms.csproj.GenerateResource.cache
+C:\GitHub\public-Billig\Number_Long++\WindowsForms\obj\Debug\WindowsForms.csproj.CoreCompileInputs.cache
+C:\GitHub\public-Billig\Number_Long++\WindowsForms\obj\Debug\WindowsForms.csproj.CopyComplete
+C:\GitHub\public-Billig\Number_Long++\WindowsForms\obj\Debug\WindowsForms.exe
+C:\GitHub\public-Billig\Number_Long++\WindowsForms\obj\Debug\WindowsForms.pdb

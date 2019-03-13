@@ -33,3 +33,10 @@ D:\MVS Project\repos\public-Billig\Number_Long++\Number_Long++\obj\Debug\Number_
 D:\MVS Project\repos\public-Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.csproj.CoreCompileInputs.cache
 D:\MVS Project\repos\public-Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.exe
 D:\MVS Project\repos\public-Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.pdb
+C:\GitHub\public-Billig\Number_Long++\Number_Long++\bin\Debug\Number_Long++.exe.config
+C:\GitHub\public-Billig\Number_Long++\Number_Long++\bin\Debug\Number_Long++.exe
+C:\GitHub\public-Billig\Number_Long++\Number_Long++\bin\Debug\Number_Long++.pdb
+C:\GitHub\public-Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.csprojResolveAssemblyReference.cache
+C:\GitHub\public-Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.csproj.CoreCompileInputs.cache
+C:\GitHub\public-Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.exe
+C:\GitHub\public-Billig\Number_Long++\Number_Long++\obj\Debug\Number_Long++.pdb
