@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -37,10 +38,28 @@ namespace WindowsForms
             }
         }
 
+
+
         private void Main()
-        {
-            BigNumber a = new BigNumber(textBoxA.Text);
-            BigNumber b = new BigNumber(textBoxB.Text);
+        {       
+            BigNumber a;
+            BigNumber b;
+             
+            try  
+            { 
+                new BigNumber(textBoxA.Text);
+                new BigNumber(textBoxB.Text);
+            } 
+            catch (Exception e) 
+            { 
+                MessageBox.Show(e.Message, "Ошибка",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(1); 
+            } 
+
+            a = new BigNumber(textBoxA.Text);
+            b = new BigNumber(textBoxB.Text);
+
             string operation = comboBox1.Text;
             switch(operation)
             {
@@ -58,33 +77,71 @@ namespace WindowsForms
                     {
                         Answer.Text = (a * b).ToString();
                         break;
-                    }
+                    } 
                 case "/":
                     {
-                        MessageBox.Show("Егор поел говна, код хуета, ку ");
-                        //Answer.Text = (a / b).ToString();
-                        Answer.Text = (a / Convert.ToInt32(textBoxB.Text)).ToString();
+                       
+                        if (int.TryParse(textBoxB.Text, out int B))
+                        {
+                            Answer.Text = (a / B).ToString();
+                        } 
+                        else
+                        { 
+                            MessageBox.Show("Превышена длина делителя!", "Ошибка",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                         break;
-                    }
+                    } 
                 default:
                     {
                         break; 
                     }
-
+                     
             }
 
         }
-
+         
         private void button1_Click(object sender, EventArgs e)
         {
             if(textBoxA.TextLength > 0 && textBoxB.TextLength > 0)
             {
-                Main();
-            }
-            else
-            {
-                MessageBox.Show("Введите текст");
+                Stopwatch sw = new Stopwatch();
+                 
+                sw.Start();  
+                Main();                  
+                sw.Stop(); 
+
+                labelTime.Text = (sw.Elapsed).ToString();
+
+                sw.Start();
+
+                for (int i = 0; i < 100; i++)
+                {
+                    Main(); 
+                } 
+
+                sw.Stop();
+
+                labelTime1.Text = (sw.Elapsed).ToString();
+
+                sw.Start();
+
+                for (int i = 0; i < 10000; i++)
+                {
+                    Main();
+                }
+                  
+                sw.Stop();
+
+                labelTime2.Text = (sw.Elapsed).ToString();
+
+            }  
+            else  
+            { 
+                MessageBox.Show("Введите текст", "Ошибка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
 }
+ 
