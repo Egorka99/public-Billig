@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Первод счилений", "Первод счилений\Первод счилений.csproj", "{73EFFC95-68BB-4493-AF9B-DD6BFB848CDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73EFFC95-68BB-4493-AF9B-DD6BFB848CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73EFFC95-68BB-4493-AF9B-DD6BFB848CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73EFFC95-68BB-4493-AF9B-DD6BFB848CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73EFFC95-68BB-4493-AF9B-DD6BFB848CDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0963CE24-A8D0-4927-AD9F-A8C2897869FB}
+	EndGlobalSection
+EndGlobal

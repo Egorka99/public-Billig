@@ -62,8 +62,8 @@ namespace Pattern
                 }
                 Console.ReadKey();
             }
-            // Decorator();
-            //  strategy();
+             Decorator();
+             strategy();
             Visitor();
         }
     }

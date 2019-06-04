@@ -27,8 +27,7 @@ namespace Decorator
     }
     public class BulgerianPizza : Pizza
     {
-        public BulgerianPizza()
-            : base("Болгарская пицца")
+        public BulgerianPizza() : base("Болгарская пицца")
         { }
         public override int GetCost()
         {
@@ -47,8 +46,7 @@ namespace Decorator
 
    public class TomatoPizza : PizzaDecorator
     {
-        public TomatoPizza(Pizza p)
-            : base(p.Name + ", с томатами", p)
+        public TomatoPizza(Pizza p): base(p.Name + ", с томатами", p)
         { }
 
         public override int GetCost()
@@ -59,8 +57,7 @@ namespace Decorator
 
    public class CheesePizza : PizzaDecorator
     {
-        public CheesePizza(Pizza p)
-            : base(p.Name + ", с сыром", p)
+        public CheesePizza(Pizza p): base(p.Name + ", с сыром", p)
         { }
 
         public override int GetCost()
