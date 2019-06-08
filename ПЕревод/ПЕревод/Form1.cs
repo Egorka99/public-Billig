@@ -25,11 +25,9 @@ namespace ПЕревод
         private void buttonTranslater_Click(object sender, EventArgs e)
         {
 
-            int P = int.Parse(textBoxP.Text); 
-            int Q = int.Parse(textBoxQ.Text);
-               
-
-            textBoxOutput.Text = TranslateFromPToQ.FromPToQ(textBoxNumber.Text,P,Q); 
+            if (int.TryParse(textBoxP.Text, out int P) && int.TryParse(textBoxQ.Text, out int Q) && textBoxNumber.Text.Length > 0)
+                textBoxOutput.Text = TranslateFromPToQ.FromPToQ(textBoxNumber.Text, P, Q);
+            else MessageBox.Show("Проверьте правильность ввода данных");
 
               
         }    
