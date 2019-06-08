@@ -8,27 +8,49 @@ namespace Translation
 {
     public class TranslateFromPToQ 
     {
-
+        /// <summary>
+        /// Основания 
+        /// </summary>
         private static string digits = "0123456789ABCDEFGHIJKLMNOPQRSTU";
 
+        /// <summary>
+        /// Является ли дробью
+        /// </summary> 
         private static bool isFraction = false;
 
+        /// <summary>
+        /// Целая часть
+        /// </summary>
         private static string intPart = null; 
          
+
+        /// <summary>
+        /// Дробная часть 
+        /// </summary>
         private static string fractPart = null;
          
-
+        /// <summary>
+        /// Перевод из системы счисления P в СС Q
+        /// </summary>
+        /// <param name="N">Число для перевода</param> 
+        /// <param name="P">Исходная система счисления</param>
+        /// <param name="Q">Конечная система счисления</param>
+        /// <returns></returns>
         public static string FromPToQ(string N, int P, int Q)
         { 
-            SplitNumber(N);
+            SplitNumber(N); // делим входные данные на целую и дробную часть 
              
-            if (isFraction)  
+            if (isFraction)  // если это дробь, переводим сначала целую, затем дробную часть 
                 return IntFromPToQ(intPart, P, Q) + "," + fractFormPToQ(fractPart, P, Q);
 
             return IntFromPToQ(intPart, P, Q); 
-        } 
-          
-           
+        }
+
+         
+        /// <summary>
+        /// Деление входные данные на целую и дробную часть 
+        /// </summary>
+        /// <param name="N"></param>
         private static void SplitNumber(string N) 
         {
             string[] S = N.Split(',');
@@ -38,8 +60,15 @@ namespace Translation
                 fractPart = S[1];
                 isFraction = true;
             } 
-        } 
+        }
 
+        /// <summary>
+        /// Перевод дробной части из системы счисления P в СС Q
+        /// </summary>
+        /// <param name="N"></param>
+        /// <param name="P"></param>
+        /// <param name="Q"></param>
+        /// <returns></returns>
         private static string fractFormPToQ(string N, int P, int Q)
         {
             if (P == 10 && Q == 10)
@@ -59,7 +88,13 @@ namespace Translation
 
             return fractFrom10ToQ(NumberIn10, Q);
         }
-
+        /// <summary>
+        /// Перевод целой части из системы счисления P в СС Q
+        /// </summary>
+        /// <param name="N"></param> 
+        /// <param name="P"></param>
+        /// <param name="Q"></param>
+        /// <returns></returns>
         private static string IntFromPToQ(string N, int P, int Q)
         {
             if (P == 10 && Q == 10)
