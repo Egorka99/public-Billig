@@ -114,14 +114,19 @@ namespace Translation
 
             return IntFrom10ToQ(NumberIn10, Q); 
 
-        }   
-          
+        }
+
+        //Целая часть переводится из десятичной системы счисления в другую систему счисления с помощью последовательного 
+        //деления целой части числа на основание системы счисления до получения целого остатка, 
+        //меньшего основания системы счисления.
+        //Результатом перевода будет являться запись из остатков, начиная с последнего.
+
         /// <summary> 
         /// Перевод целой части числа из 10-ной в Q
         /// </summary>
         /// <param name="N">Число</param> 
         /// <param name="Q">Новая система счисления</param> 
-        /// <returns>Число</returns>
+        /// <returns>Число</returns> 
         private static string IntFrom10ToQ(string N, int Q)
         {
             string backRes = null;
@@ -133,15 +138,21 @@ namespace Translation
                 ostatok = Number % Q;
                 Number = Number / Q;
                 backRes = backRes + digits[ostatok];
-                s--;
+                s--; 
             }
             if (string.IsNullOrEmpty(backRes))
                 backRes = N;
             string Result = new string(backRes.ToCharArray().Reverse().ToArray());
             return Result;
         }
+
+
+        //Для перевода числа из любой системы счисления в десятичную достаточно пронумеровать его разряды, 
+        //начиная с нулевого(разряд слева от десятичной точки) аналогично примерам 1 или 2. 
+        //Найдём сумму произведений цифр числа на основание системы счисления в степени позиции этой цифры
+
         /// <summary>
-        /// Перевод целой части числа из P в 10-ную 
+        /// Перевод целой части числа из P в 10-ную    
         /// </summary>
         /// <param name="N">Число</param>
         /// <param name="P">Старая система счисления</param>
@@ -171,7 +182,7 @@ namespace Translation
             int size = N.Length;
             string Res = null;
             int ostatok;
-            long Number = long.Parse(N);
+            long Number = long.Parse(N); 
             int s = 10; 
             while (Number != 0 && s != 0)
             {

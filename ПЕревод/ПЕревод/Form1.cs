@@ -19,7 +19,7 @@ namespace ПЕревод
         private void Form1_Load(object sender, EventArgs e)
         {
 
-        } 
+        }  
           
   
         private void buttonTranslater_Click(object sender, EventArgs e)
@@ -40,19 +40,20 @@ namespace ПЕревод
                     string digits = "0123456789ABCDEFGHIJKLMNOPQRSTU";
                     string number = textBoxNumber.Text;
 
-                    for (int i = 0; i < number.Length; i++) 
+                    for (int i = 0; i < number.Length; i++)  
                     {    
                         if (digits.IndexOf(number[i]) >= P)   
                         {
                             throw new Exception("Число не входит в " + P.ToString() + "-ную систему счисления.");
                         } 
-                    } 
+                    }
+                      
 
                     int j = number.IndexOf(','); 
-                     
+                       
                     for (int i = 0; i < number.Length; i++)
                     { 
-
+                         
                         if (number[i] == '.') 
                         {
                             throw new Exception("Дробь записывается с помощью запятой"); 
