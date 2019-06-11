@@ -25,16 +25,75 @@ namespace ПЕревод
         private void buttonTranslater_Click(object sender, EventArgs e)
         {
             try
-            { 
-            if (int.TryParse(textBoxP.Text, out int P) && int.TryParse(textBoxQ.Text, out int Q) && textBoxNumber.Text.Length > 0)
-                textBoxOutput.Text = TranslateFromPToQ.FromPToQ(textBoxNumber.Text, P, Q);
+            {
+                if (string.IsNullOrEmpty(textBoxNumber.Text))
+                    throw new Exception("Исходное число пусто"); 
+                if (string.IsNullOrEmpty(textBoxP.Text)) 
+                    throw new Exception("P не заполнено");
+                if (string.IsNullOrEmpty(textBoxQ.Text)) 
+                    throw new Exception("Q не заполнено");
+
+
+
+                if (int.TryParse(textBoxP.Text, out int P) && int.TryParse(textBoxQ.Text, out int Q) && textBoxNumber.Text.Length > 0)
+                {
+                    string digits = "0123456789ABCDEFGHIJKLMNOPQRSTU";
+                    string number = textBoxNumber.Text;
+
+                    for (int i = 0; i < number.Length; i++) 
+                    {    
+                        if (digits.IndexOf(number[i]) >= P)   
+                        {
+                            throw new Exception("Число не входит в " + P.ToString() + "-ную систему счисления.");
+                        } 
+                    } 
+
+                    int j = number.IndexOf(','); 
+                     
+                    for (int i = 0; i < number.Length; i++)
+                    { 
+
+                        if (number[i] == '.') 
+                        {
+                            throw new Exception("Дробь записывается с помощью запятой"); 
+                        }
+                        if ((number[i] >= 'а' && number[i] <= 'я') || (number[i] >= 'А' && number[i] <= 'Я'))
+                        {
+                            throw new Exception("Некорректный ввод букв.");
+                        } 
+                        if (number[i] >= 'a' && number[i] <= 'z')
+                        {
+                            throw new Exception("Должны использоватся заглавные английские буквы."); 
+                        }
+                        if (!char.IsLetterOrDigit(number[i]) && number[i] != ',')
+                        {
+                            throw new Exception("Некорректный ввод : символ { " + number[i] + " }"); 
+                        }
+                        if (number[i] == ',' && i != j) 
+                        {
+                            throw new Exception("Запятых больше 1."); 
+                        }
+                    }     
+
+                    if (P < 2 || P > 30)
+                    {
+                        throw new Exception("Ошибка!!!Неверный ввод P(2<=P<=30)."); 
+                    }
+                    if (Q < 2 || Q > 30)   
+                    {
+                        throw new Exception("Ошибка!!!Неверный ввод Q(2<=Q<=30)."); 
+                    }
+
+                    textBoxOutput.Text = TranslateFromPToQ.FromPToQ(textBoxNumber.Text, P, Q);
+                }
             else MessageBox.Show("Проверьте правильность ввода данных");
+
             }
             catch (Exception error)
             {
-                MessageBox.Show("Ошибка " + error.Message);
+                MessageBox.Show("Ошибка: " + error.Message);
             }
-        }    
+        }     
           
     }  
 } 

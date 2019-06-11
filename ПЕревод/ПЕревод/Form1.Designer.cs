@@ -42,7 +42,7 @@
             // buttonTranslater
             // 
             this.buttonTranslater.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonTranslater.Location = new System.Drawing.Point(186, 117);
+            this.buttonTranslater.Location = new System.Drawing.Point(200, 123);
             this.buttonTranslater.Name = "buttonTranslater";
             this.buttonTranslater.Size = new System.Drawing.Size(117, 46);
             this.buttonTranslater.TabIndex = 0;
@@ -80,9 +80,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(171, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 24);
+            this.label1.Size = new System.Drawing.Size(22, 24);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Пэ";
+            this.label1.Text = "P";
             // 
             // label2
             // 
@@ -90,9 +90,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(283, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 24);
+            this.label2.Size = new System.Drawing.Size(25, 24);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Ку";
+            this.label2.Text = "Q";
             // 
             // label3
             // 
@@ -138,8 +138,9 @@
             this.Controls.Add(this.textBoxP);
             this.Controls.Add(this.textBoxNumber);
             this.Controls.Add(this.buttonTranslater);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
-            this.Text = "Перевод чисел";
+            this.Text = "Перевод чисел из СС P в Q";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
